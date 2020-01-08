@@ -115,9 +115,24 @@ function App() {
       }
     }
   };
+
+  function onState(state) {
+    state.update("config.chart.items.1", item1 => {
+      item1.label = "Gantt schedule timeline calendar";
+      item1.time.end = item1.time.end + 2 * 24 * 60 * 60 * 1000;
+      return item1;
+    });
+    state.subscribe("config.chart.items", items => {
+      console.log("items changed", items);
+    });
+    state.subscribe("config.list.rows", rows => {
+      console.log("rows changed", rows);
+    });
+  }
+
   return (
     <div className="App">
-      <GSTC config={config} />
+      <GSTC config={config} onState={onState} />
     </div>
   );
 }
