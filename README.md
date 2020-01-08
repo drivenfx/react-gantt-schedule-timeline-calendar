@@ -8,6 +8,10 @@ React version of [gantt-schedule-timeline-calendar](https://github.com/neuroneti
 
 Documentation can be found on original component page at [gantt-schedule-timeline-calendar](https://github.com/neuronetio/gantt-schedule-timeline-calendar)
 
+<p align="center">
+  <img src="https://neuronet.io/screenshots/appscrn.png?uniq=1" alt="gstc-logo">
+</p>
+
 ## installation
 
 `npm i react-gantt-schedule-timeline-calendar`
@@ -118,3 +122,7 @@ function App() {
   );
 }
 ```
+
+## license
+
+GPL-3.0 (for non GPL-3.0 projects you must buy commercial license - contact me at neuronet.io@gmail.com)
