@@ -1,8 +1,7 @@
-import React, { useCallback } from "react";
-import GSTC from "gantt-schedule-timeline-calendar";
-import "gantt-schedule-timeline-calendar/dist/style.css";
+import React from "react";
+import GSTC from "./GSTC";
 
-function GSTCWrapper() {
+function App() {
   const config = {
     height: 300,
     list: {
@@ -95,27 +94,9 @@ function GSTCWrapper() {
       }
     }
   };
-  let state = GSTC.api.stateFromConfig(config);
-  const callback = useCallback(
-    node => {
-      if (node) {
-        console.log("mounting");
-        GSTC({
-          element: node,
-          state
-        });
-      }
-    },
-    [state]
-  );
-
-  return <div ref={callback} />;
-}
-
-function App() {
   return (
     <div className="App">
-      <GSTCWrapper />
+      <GSTC config={config} />
     </div>
   );
 }
